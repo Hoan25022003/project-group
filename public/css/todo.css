@@ -1,0 +1,209 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: darkturquoise;
+}
+
+.header {
+  text-align: center;
+  margin-top: 30px;
+}
+
+.header h1 {
+  letter-spacing: 2px;
+  font-weight: 700;
+  margin-bottom: 16px;
+}
+
+.btn-add {
+  background-color: rgb(75, 75, 231);
+  border: none;
+  border-radius: 30px;
+  padding: 14px 32px;
+  font-size: 18px;
+  font-weight: 500;
+  color: white;
+  transition: 0.3s linear;
+}
+
+.btn-add i {
+  margin-right: 8px;
+}
+
+.btn-add:hover {
+  background-color: #367fec;
+}
+
+.list-data {
+  display: flex;
+  justify-content: space-evenly;
+  margin-top: 50px;
+}
+
+td button {
+  padding: 4px;
+  margin-left: 8px;
+}
+
+.modal-2 {
+  background-color: rgba(0, 0, 0, 0.5);
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  right: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.hide {
+  display: none;
+}
+
+.modal-container {
+  width: 400px;
+  background-color: white;
+}
+
+.item-data {
+  padding: 16px;
+  background-color: rgba(255, 255, 255, 0.5);
+  border-radius: 10px;
+  cursor: default;
+  overflow: auto;
+}
+
+/* width */
+.item-data::-webkit-scrollbar {
+  width: 8px;
+}
+
+/* Track */
+.item-data::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+/* Handle */
+.item-data::-webkit-scrollbar-thumb {
+  background: rgb(148, 148, 148);
+}
+
+/* Handle on hover */
+.item-data::-webkit-scrollbar-thumb:hover {
+  background: #888;
+}
+
+.list-data > div:hover {
+  transform: translateY(-2px);
+  box-shadow: 2px 4px 4px 2px rgba(0, 0, 0, 0.3);
+}
+
+.list-data h2 {
+  text-align: center;
+}
+
+.name {
+  font-size: 18px;
+  font-weight: 500;
+  margin-right: 12px;
+  width: 200px;
+}
+
+.delete,
+.update {
+  margin-left: 8px;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border: none;
+  background-color: rgba(253, 2, 128, 0.5);
+  color: white;
+  font-size: 18px;
+  transition: 0.3s ease-in-out;
+}
+
+.delete:hover,
+.update:hover {
+  background-color: deeppink;
+}
+
+.item {
+  height: 50px;
+}
+
+.modal-header {
+  background-color: #367fec;
+  color: white;
+}
+
+.modal-content {
+  width: 420px;
+  margin: 0 auto;
+  border-radius: 8px;
+}
+
+.modal-title i {
+  margin-right: 6px;
+}
+
+.modal-body {
+  padding-bottom: 28px;
+}
+
+.result-update,
+.result-add {
+  text-align: center;
+  color: red;
+  font-size: 16px;
+  margin-bottom: 16px;
+}
+
+#name,
+#name-up {
+  width: 100%;
+}
+
+.input-select,
+.input-select-2 {
+  display: flex;
+  align-items: center;
+  margin-top: 20px;
+}
+
+#deadline,
+#deadline-up {
+  flex: 3;
+  margin-right: 8px;
+}
+
+#status,
+#status-up {
+  flex: 1;
+}
+
+#name,
+#deadline,
+#status,
+#name-up,
+#deadline-up,
+#status-up {
+  padding: 4px 8px;
+  font-size: 18px;
+  border: none;
+  outline: none;
+  border-bottom: 2px solid #dadada;
+}
+
+#name:focus,
+#deadline:focus,
+#status:focus,
+#name-up:focus,
+#deadline-up:focus,
+#status-up:focus {
+  border-bottom: 2px solid #367fec;
+}

@@ -1,0 +1,11 @@
+<% listData.map((value,index) => { %>
+<tr>
+  <td><%= value.username %></td>
+  <td><%= value.address %></td>
+  <td><%= value.school %></td>
+  <td>
+    <button onclick="removeUser('<%= value._id %>')">Delete</button>
+    <button>Edit</button>
+  </td>
+</tr>
+<% }) %>

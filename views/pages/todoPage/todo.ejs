@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+      integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link rel="stylesheet" href="/public/css/todo.css" />
+  </head>
+  <body>
+    <div class="header">
+      <h1>TodoList</h1>
+      <button
+        type="button"
+        class="btn-add"
+        data-bs-toggle="modal"
+        data-bs-target="#exampleModal"
+      >
+        <i class="fas fa-plus"></i>
+        ADD TODO
+      </button>
+    </div>
+
+    <div
+      class="modal fade"
+      id="exampleModal"
+      tabindex="-1"
+      aria-labelledby="exampleModalLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">
+              <i class="fas fa-user-plus"></i> Modal Add
+            </h5>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            ></button>
+          </div>
+          <div class="modal-body">
+            <input type="text" name="" id="name" placeholder="Name" /> <br />
+            <div class="input-select">
+              <input type="date" name="" id="deadline" />
+              <select name="" id="status">
+                <option value="todo">todo</option>
+                <option value="doing">doing</option>
+                <option value="done">done</option>
+              </select>
+            </div>
+          </div>
+          <div class="modal-footer">
+            <button
+              type="button"
+              class="btn btn-secondary close"
+              data-bs-dismiss="modal"
+            >
+              Close
+            </button>
+            <button type="button" class="btn btn-primary" onclick="add()">
+              Add Todo
+            </button>
+          </div>
+          <p class="result-add"></p>
+        </div>
+      </div>
+    </div>
+
+    <div class="list-data">
+      <% status.forEach(value => { %>
+      <div class="item-data">
+        <h2><%= value %></h2>
+        <table>
+          <% listTodo.forEach(item => { %> <% if (item.status === value) { %>
+          <tr>
+            <td><%= item.name %></td>
+            <td><%= item.deadline %></td>
+            <td>
+              <button onclick="removeTodo()"></button>
+              <button onclick="updateTodo()"></button>
+            </td>
+          </tr>
+          <% } %> <%}) %>
+        </table>
+      </div>
+      <% }) %>
+    </div>
+
+    <div
+      class="modal fade"
+      id="staticBackdrop"
+      data-bs-backdrop="static"
+      data-bs-keyboard="false"
+      tabindex="-1"
+      aria-labelledby="staticBackdropLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="staticBackdropLabel">
+              <i class="fas fa-cog"></i> Modal Update
+            </h5>
+          </div>
+          <div class="modal-body">
+            <input type="text" name="" id="name-up" placeholder="name" /> <br />
+            <div class="input-select-2">
+              <input type="date" name="" id="deadline-up" />
+              <select name="" id="status-up">
+                <option value="todo">todo</option>
+                <option value="doing">doing</option>
+                <option value="done">done</option>
+              </select>
+            </div>
+          </div>
+          <div class="modal-footer">
+            <button
+              type="button"
+              class="btn btn-secondary"
+              data-bs-dismiss="modal"
+              id="close-2"
+            >
+              Close
+            </button>
+            <button type="button" class="btn btn-primary" id="update">
+              UPDATE
+            </button>
+          </div>
+          <p class="result-update"></p>
+        </div>
+      </div>
+    </div>
+  </body>
+  <script
+    src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+    crossorigin="anonymous"
+  ></script>
+  <script
+    src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"
+    integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ=="
+    crossorigin="anonymous"
+    referrerpolicy="no-referrer"
+  ></script>
+  <script src="/public/js/todo.js"></script>
+</html>

@@ -1,0 +1,18 @@
+body {
+  background-color: cadetblue;
+  color: white;
+  margin-left: 40px;
+}
+
+tr td {
+  font-weight: 500;
+  font-size: 18px;
+}
+
+.title td {
+  font-weight: 600;
+}
+
+td {
+  width: 120px;
+}
