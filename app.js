@@ -18,4 +18,4 @@ app.use("/todo", todoRouter);
 app.use("/list", listRouter);
 app.use("/", indexRouter);
 
-app.listen(3000);
+app.listen(process.env.PORT || 3000);

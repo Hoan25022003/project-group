@@ -1,6 +1,4 @@
-const mongoose = require("mongoose");
-
-mongoose.connect("mongodb://localhost/Legend");
+const mongoose = require("./connectDB");
 
 const userSchema = mongoose.Schema(
   {
@@ -19,3 +17,12 @@ const userSchema = mongoose.Schema(
 const userModel = mongoose.model("user", userSchema);
 
 module.exports = userModel;
+
+userModel
+  .create({
+    username: "Huy",
+    password: "1234",
+    address: "Thai Binh",
+  })
+  .then((data) => console.log(data))
+  .catch((err) => console.log(err));
