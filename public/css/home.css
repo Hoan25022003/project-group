@@ -1,3 +1,16 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+.logo {
+  width: 100px;
+}
+.logo img {
+  display: block;
+  width: 100%;
+}
+
 body {
   background-color: cadetblue;
   color: white;

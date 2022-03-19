@@ -19,7 +19,8 @@ function isLogined() {
       })
       .catch((err) => {
         if ($(".result").text().length == 0) {
-          $(".result").text(err.responseJSON.message);
+          // $(".result").text(err.responseJSON.message);
+          console.log(err);
         }
       });
   }

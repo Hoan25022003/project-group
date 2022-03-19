@@ -159,13 +159,20 @@ router.post("/creat", async (req, res) => {
     if (user) {
       res.status(400).json({ message: "Username đã tồn tại" });
     } else {
-      const creat = await userModel.create({
+      const hash = await bcrypt.hash(req.body.password, 10);
+      await userModel.create({
         username: req.body.username,
-        school: req.body.school,
+        password: hash,
         address: req.body.address,
+        date: req.body.date,
+        sex: req.body.sex,
+        school: req.body.school,
+        avatar:
+          req.body.sex === "Male"
+            ? "/public/uploads/Avatar-empty-male.jpg"
+            : "/public/uploads/Avatar-empty-female.jpg",
       });
-      const list = await userModel.find();
-      res.render("components/listUser", { listData: list });
+      res.status(200).json({ message: "Successfull" });
     }
   } catch (err) {
     res.status(500).json(err);
@@ -201,5 +208,21 @@ router.delete("/:id", async (req, res) => {
 //       console.log(err);
 //     });
 // });
+
+router.put("/createintro", (req, res) => {
+  userModel
+    .updateOne(
+      { token: req.cookies.user },
+      {
+        intro: req.body.intro,
+      }
+    )
+    .then(function (data) {
+      res.json(data);
+    })
+    .catch(function (err) {
+      res.json(err);
+    });
+});
 
 module.exports = router;
