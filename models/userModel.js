@@ -1,6 +1,4 @@
-const mongoose = require("mongoose");
-
-mongoose.connect("mongodb://localhost/Legend");
+const mongoose = require("./connectDB");
 
 const userSchema = mongoose.Schema(
   {

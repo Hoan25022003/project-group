@@ -4,25 +4,39 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Form Login</title>
+    <title>Login</title>
+    <link rel="stylesheet" href="/public/css/login.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Hurricane&display=swap"
+      rel="stylesheet"
+    />
   </head>
-  <style>
-    body {
-      background-color: mediumslateblue;
-    }
-    .result {
-      color: red;
-    }
-  </style>
+
   <body>
-    <h1>Form Login</h1>
-    <input type="text" placeholder="Username" id="username" />
-    <input type="password" id="password" placeholder="Password" />
-    <button onclick="isLogined()">Login</button>
-    <a href="/Register">
-      <button class="btn-register">Register</button>
-    </a>
-    <p class="result"></p>
+    <h1>Login Page</h1>
+    <div class="home">
+      <a href="/Home">
+        <img
+          src="/public/uploads/Screen Shot 2022-03-18 at 22.49.27.png"
+          alt=""
+        />
+      </a>
+    </div>
+    <div class="content">
+      <input type="text" placeholder="Username" id="username" />
+      <input type="password" id="password" placeholder="Password" />
+      <div class="btn">
+        <p class="result"></p>
+        <button onclick="isLogined()">Login</button>
+        <a href="/Register">
+          <p class="alert">Dont have acount?</p>
+          <button class="btn-register">Register</button>
+        </a>
+      </div>
+    </div>
+    <div class="footer">Copyright © 2022 NodemyK20</div>
   </body>
   <script
     src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"
