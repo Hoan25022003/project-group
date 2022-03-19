@@ -52,7 +52,7 @@ h1 {
   padding: 50px;
   font-family: "Hurricane";
   font-size: 80px;
-  margin-bottom: 80px;
+  margin-bottom: 30px;
   animation-name: changeColor;
   animation-iteration-count: infinite;
   animation-duration: 6s;
@@ -87,8 +87,9 @@ h1 {
   width: 600px;
   margin: auto;
 }
-.content input {
-  line-height: 3;
+.content input,
+.content select {
+  line-height: 1.5;
   padding: 10px;
   margin: 10px 0;
   border-radius: 10px;
@@ -113,14 +114,7 @@ h1 {
   border: none;
   text-align: center;
 }
-.result,
-.alert {
+.result {
   height: 30px;
   color: red;
-}
-a {
-  text-decoration: none;
-}
-.alert {
-  margin-top: 30px;
 }
