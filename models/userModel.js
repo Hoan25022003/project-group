@@ -9,7 +9,6 @@ const userSchema = mongoose.Schema(
     sex: String,
     password: String,
     address: String,
-    school: String,
     role: String,
     token: String,
     avatar: String,

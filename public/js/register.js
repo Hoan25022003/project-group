@@ -5,14 +5,12 @@ async function signUp() {
     const sex = $("#sex").val();
     const date = $("#date").val().split("-").reverse().join("/");
     const address = $("#address").val().trim();
-    const school = $("#school").val().trim();
     const password = $("#password").val();
     const confirmPassword = $("#confirm-password").val();
     if (
       username == "" ||
       date == "" ||
       address == "" ||
-      school == "" ||
       password == "" ||
       confirmPassword == ""
     ) {
@@ -31,12 +29,10 @@ async function signUp() {
             sex: sex,
             date: date,
             address: address,
-            school: school,
             password: password,
           },
         });
         window.location.href = "/Login";
-        console.log("Successfull Sign Up");
       }
     }
   } catch (err) {

@@ -22,7 +22,6 @@ $.ajax({
         <p>Date : ${data.date}</p>
         <p>Age : ${age}</p>
         <p>Address : ${data.address}</p>
-        <p>School : ${data.school}</p>
         `;
     $("#info").append(htmls);
     $(".avata").append(`
