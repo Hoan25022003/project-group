@@ -116,9 +116,9 @@ router.put("/logout", async (req, res) => {
         token: "",
       }
     );
-    res.status(200).json({ message: "Successfull Log out" });
+    res.status(200).json({ message: "Successfull Logout" });
   } catch (err) {
-    res.status(500).json(err);
+    res.status(500).json({ message: "Logout Failed" });
   }
 });
 
@@ -159,13 +159,19 @@ router.post("/creat", async (req, res) => {
     if (user) {
       res.status(400).json({ message: "Username đã tồn tại" });
     } else {
-      const creat = await userModel.create({
+      const hash = await bcrypt.hash(req.body.password, 10);
+      await userModel.create({
         username: req.body.username,
-        school: req.body.school,
+        password: hash,
         address: req.body.address,
+        date: req.body.date,
+        sex: req.body.sex,
+        avatar:
+          req.body.sex === "Male"
+            ? "/public/img/Avatar-empty-male.jpg"
+            : "/public/img/Avatar-empty-female.jpg",
       });
-      const list = await userModel.find();
-      res.render("components/listUser", { listData: list });
+      res.status(200).json({ message: "Successfull" });
     }
   } catch (err) {
     res.status(500).json(err);

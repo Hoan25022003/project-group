@@ -1,4 +1,5 @@
 function isLogined() {
+  $(".result").html("");
   const username = $("#username").val().trim();
   const password = $("#password").val();
   $(".result").html("");
@@ -14,13 +15,10 @@ function isLogined() {
       },
     })
       .then((data) => {
-        console.log(data);
         window.location.href = "/Home";
       })
       .catch((err) => {
-        if ($(".result").text().length == 0) {
-          $(".result").text(err.responseJSON.message);
-        }
+        $(".result").text(err.responseJSON.message);
       });
   }
 }
