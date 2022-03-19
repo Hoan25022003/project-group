@@ -7,6 +7,31 @@
   --main-color: #0168e8;
   --sub-color: #90429e;
 }
+@keyframes changeColor {
+  0% {
+    color: purple;
+  }
+  30% {
+    color: blue;
+  }
+  60% {
+    color: green;
+  }
+  100% {
+    color: purple;
+  }
+}
+@keyframes blink {
+  0% {
+    border-color: red;
+  }
+  50% {
+    border-color: green;
+  }
+  100% {
+    border-color: red;
+  }
+}
 body {
   background-image: linear-gradient(
     to bottom right,
@@ -21,49 +46,15 @@ body {
   width: 100%;
 }
 
-.footer {
-  text-align: center;
-  position: absolute;
-  font-size: 30px;
-  bottom: 30px;
-  width: 100%;
-}
-.user-img {
-  width: 200px;
-  height: 200px;
-}
-.user-img img {
-  display: block;
-  width: 200px;
-  height: 200px;
-  border-radius: 50%;
-  object-fit: cover;
-  object-position: center;
-}
-
 h1 {
   text-align: center;
   padding: 50px;
   font-family: "Hurricane";
   font-size: 80px;
   margin-bottom: 80px;
-}
-
-.user-profile {
-  display: flex;
-  flex-direction: column;
-  width: 300px;
-  align-items: center;
-  flex: 1;
-}
-.user-name {
-  font-family: "Hurricane";
-  font-size: 35px;
-  text-transform: capitalize;
-  text-align: center;
-}
-.Port-detail {
-  display: flex;
+  animation-name: changeColor;
+  animation-iteration-count: infinite;
+  animation-duration: 6s;
 }
 
 .home {
@@ -72,6 +63,7 @@ h1 {
   left: 30px;
 }
 .home img {
+  border-radius: 5px;
   width: 100px;
   object-fit: cover;
   object-position: center;
@@ -92,6 +84,19 @@ h1 {
 .home:hover::after {
   display: block;
 }
+.footer {
+  text-align: center;
+  position: absolute;
+  font-size: 30px;
+  bottom: 30px;
+  width: 100%;
+  animation-name: changeColor;
+  animation-iteration-count: infinite;
+  animation-duration: 6s;
+}
+
+/* css rieng*/
+
 .avata {
   cursor: pointer;
   position: relative;
@@ -112,6 +117,35 @@ h1 {
 .avata:hover::after {
   display: block;
 }
+.user-img {
+  width: 200px;
+  height: 200px;
+}
+.user-img img {
+  display: block;
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  object-fit: cover;
+  object-position: center;
+}
+
+.user-profile {
+  display: flex;
+  flex-direction: column;
+  width: 300px;
+  align-items: center;
+  flex: 1;
+}
+.user-name {
+  font-family: "Hurricane";
+  font-size: 35px;
+  text-transform: capitalize;
+  text-align: center;
+}
+.Port-detail {
+  display: flex;
+}
 .show-btn {
   margin-left: -700px;
   transition: 0.4s ease-in-out;
@@ -123,9 +157,7 @@ h1 {
   outline: none;
   border: none;
 }
-.show-btn:hover {
-  scale: 1.1;
-}
+
 .user-profile:hover .show-btn {
   margin: 0;
 }
@@ -207,12 +239,15 @@ h1 {
   margin: 5px 0;
 }
 
-.introduce > p {
+.introheader {
   text-align: center;
   margin-bottom: 10px;
   font-family: "Hurricane";
   font-size: 35px;
   text-transform: uppercase;
+  color: #fff;
+  font-weight: bolder;
+  transition: 0.4s ease;
 }
 .introduce {
   flex: 3;
@@ -225,7 +260,8 @@ h1 {
 .introduce-detail {
   width: 100%;
   height: 100%;
-  border: 3px solid var(--main-color);
+  border: 3px solid;
+  animation: blink 6s infinite;
   padding: 50px;
   border-radius: 10px 100px;
   font-family: "Hurricane";
@@ -250,6 +286,11 @@ h1 {
 }
 .introduce:hover .edit-intro {
   opacity: 1;
+}
+.introduce:hover .introheader {
+  animation-name: changeColor;
+  animation-iteration-count: infinite;
+  animation-duration: 3s;
 }
 .intro-modal-detail {
   width: 600px;
