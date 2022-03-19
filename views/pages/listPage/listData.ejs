@@ -1,6 +1,13 @@
 <% listData.map(function(value){ %>
-<div>
-  <a href="/list/<%= value._id %>"><%= value.listName %></a>
-  <button onclick="deleteList('<%= value._id %>')">del</button>
+
+<div class="listjob">
+  <a class="list-detail" href="/list/<%= value._id %>"><%= value.listName %></a>
+  <div class="btn-click">
+    <button class="btn-view update">update</button>
+    <button class="btn-view" onclick="deleteList('<%= value._id %>')">
+      remove
+    </button>
+  </div>
 </div>
+
 <% }) %>
