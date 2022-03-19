@@ -4,14 +4,33 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>List</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Hurricane&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="/public/css/list.css" />
   </head>
   <body>
-    <h1>This is todo page</h1>
-    <h1>list</h1>
-    <input type="text" name="" id="listName" placeholder="list name" />
-    <button onclick="addList()">Add List</button>
-    <div class="list"><%- include('./listData.ejs') %></div>
+    <h1>List Page</h1>
+    <div class="home">
+      <a href="/Home">
+        <img
+          src="/public/uploads/Screen Shot 2022-03-18 at 22.49.27.png"
+          alt=""
+        />
+      </a>
+    </div>
+    <div class="content">
+      <div class="input-content">
+        <input type="text" name="" id="listName" placeholder="list name" />
+        <button onclick="addList()">Add List</button>
+      </div>
+      <div class="list"><%- include('./listData.ejs') %></div>
+    </div>
+    <div class="footer">Copyright © 2022 NodemyK20</div>
   </body>
   <script
     src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"
