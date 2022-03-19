@@ -29,7 +29,7 @@ $.ajax({
     <div class="user-name">${data.username}</div>
     `);
     if (data.intro == undefined) {
-      $(".introduce-detail").append("input something");
+      $(".introduce-detail").append("Input something to introduce your self");
     } else {
       $(".introduce-detail").append(`${data.intro}`);
     }
