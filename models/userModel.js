@@ -10,6 +10,7 @@ const userSchema = mongoose.Schema(
     role: String,
     token: String,
     avatar: String,
+    intro: String,
   },
   { collection: "user" }
 );

@@ -208,4 +208,20 @@ router.delete("/:id", async (req, res) => {
 //     });
 // });
 
+router.put("/createintro", (req, res) => {
+  userModel
+    .updateOne(
+      { token: req.cookies.user },
+      {
+        intro: req.body.intro,
+      }
+    )
+    .then(function (data) {
+      res.json(data);
+    })
+    .catch(function (err) {
+      res.json(err);
+    });
+});
+
 module.exports = router;

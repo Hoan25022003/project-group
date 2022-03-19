@@ -5,43 +5,80 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-    <link rel="stylesheet" href="" />
+    <link rel="stylesheet" href="/public/css/portfolio.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Hurricane&display=swap"
+      rel="stylesheet"
+    />
   </head>
-  <style>
-    body {
-      background-color: darkorchid;
-      color: white;
-      text-align: center;
-    }
-    p {
-      font-size: 20px;
-      margin-bottom: -6px;
-    }
-    div {
-      margin-top: 30px;
-    }
-    img {
-      border-radius: 50%;
-      width: 60px;
-      height: 60px;
-      object-fit: cover;
-      object-position: center;
-    }
-  </style>
+
   <body>
     <h1>My Portfolio</h1>
-    <div id="info"></div>
-    <div>
+
+    <div class="home">
       <a href="/Home">
-        <button>Home</button>
-      </a>
-      <a href="/change-password">
-        <button>Change Password</button>
-      </a>
-      <a href="/Profile">
-        <button>Change avatar</button>
+        <img
+          src="/public/uploads/Screen Shot 2022-03-18 at 22.49.27.png"
+          alt=""
+        />
       </a>
     </div>
+    <div class="Port-detail">
+      <div class="user-profile">
+        <div class="avata"></div>
+        <button class="show-btn">Change Password</button>
+      </div>
+      <div id="info"></div>
+      <div class="introduce">
+        <p>Introduce Myself</p>
+        <div class="introduce-detail"></div>
+        <button class="edit-intro">Edit</button>
+      </div>
+    </div>
+    <div class="avata-modal">
+      <div class="avata-change">
+        <form enctype="multipart/form-data">
+          <input type="file" name="avatar" />
+        </form>
+        <div class="avata-btn">
+          <button onclick="uploads()">Uploads</button>
+          <button class="cancel-upload">Cancel</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="change-pass-modal">
+      <div class="change-pass-detail">
+        <input type="text" placeholder="Username" id="username" />
+        <input type="password" id="password" placeholder="Current Password" />
+        <input type="password" id="new-password" placeholder="New Password" />
+        <input
+          type="password"
+          id="confirm-password"
+          placeholder="Confirm Password"
+        />
+        <div class="pass-btn">
+          <button onclick="changePassword()">Confirm</button>
+          <button class="cancel-change">Cancel</button>
+        </div>
+        <p class="result"></p>
+      </div>
+    </div>
+
+    <div class="edit-intro-modal">
+      <div class="intro-modal-detail">
+        <textarea name="" id="" cols="30" rows=10"></textarea>
+        <div class="edit-intro-btn">
+          <button onclick="changeIntro()">Confirm</button>
+          <button class="cancel-intro">Cancel</button>
+        </div>
+        <p class="result"></p>
+      </div>
+    </div>
+
+    <div class="footer">Copyright © 2022 NodemyK20</div>
   </body>
   <script
     src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"
@@ -50,4 +87,6 @@
     referrerpolicy="no-referrer"
   ></script>
   <script src="/public/js/portfolio.js"></script>
+  <script src="/public/js/profile.js"></script>
+  <script src="/public/js/change.js"></script>
 </html>
