@@ -6,7 +6,7 @@ h1 {
   margin-bottom: 80px;
   animation-name: changeColor;
   animation-iteration-count: infinite;
-  animation-duration: 6s;
+  animation-duration: 4s;
 }
 
 .home {
@@ -44,7 +44,7 @@ h1 {
   width: 100%;
   animation-name: changeColor;
   animation-iteration-count: infinite;
-  animation-duration: 6s;
+  animation-duration: 4s;
 }
 
 /* css rieng*/
@@ -155,6 +155,15 @@ h1 {
   border: none;
   margin-top: 5px;
 }
+.avata-btn button:hover,
+.pass-btn button:hover,
+.edit-intro-btn button:hover,
+.show-btn:hover {
+  background-color: rgba(255, 255, 255, 0.623);
+  animation-name: changeColor;
+  animation-iteration-count: infinite;
+  animation-duration: 2s;
+}
 
 .change-pass-modal,
 .edit-intro-modal {
@@ -213,13 +222,14 @@ h1 {
   width: 100%;
   height: 100%;
   border: 3px solid;
-  animation: blink 6s infinite;
+  animation: blink 4s infinite;
   padding: 50px;
   border-radius: 10px 100px;
   font-family: "Hurricane";
   font-size: 35px;
   text-align: center;
   text-transform: capitalize;
+  overflow: scroll;
 }
 .edit-intro {
   position: absolute;
@@ -235,6 +245,12 @@ h1 {
   border: none;
   opacity: 0;
   transition: 0.5s ease;
+}
+.edit-intro:hover {
+  background-color: rgba(255, 255, 255, 0.623);
+  animation-name: changeColor;
+  animation-iteration-count: infinite;
+  animation-duration: 2s;
 }
 .introduce:hover .edit-intro {
   opacity: 1;
