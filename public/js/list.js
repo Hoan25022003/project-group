@@ -1,15 +1,17 @@
 async function addList() {
   const listName = $("#listName").val();
+  const color = $("#color").val();
+  console.log(color);
   try {
-    const res = await $.ajax({
+    await $.ajax({
       url: "/list",
       type: "POST",
       data: {
         listName: listName,
+        color: color,
       },
     });
-    $("#listName").val("");
-    $(".list").html(res);
+    window.location.reload();
   } catch (error) {
     console.log(error);
   }
@@ -17,11 +19,11 @@ async function addList() {
 
 async function deleteList(id) {
   try {
-    const res = await $.ajax({
+    await $.ajax({
       type: "DELETE",
       url: "/list/" + id,
     });
-    $(".list").html(res);
+    window.location.reload();
   } catch (error) {
     console.log(error);
   }

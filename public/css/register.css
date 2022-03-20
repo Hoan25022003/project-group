@@ -63,9 +63,6 @@ h1 {
   outline: none;
   border: none;
   text-align: center;
-<<<<<<< HEAD
-  font-size: 18px;
-=======
   font-size: 20px;
 }
 .btn button:hover {
@@ -73,7 +70,6 @@ h1 {
   animation-name: changeColor;
   animation-iteration-count: infinite;
   animation-duration: 2s;
->>>>>>> ba0d281e73a2fcb45e8475735655c83572b95587
 }
 .result {
   height: 30px;

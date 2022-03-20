@@ -27,6 +27,7 @@ router.post("/", checkNotLogin, async (req, res) => {
       await listModel.create({
         userID: req.id,
         listName: req.body.listName,
+        color: req.body.color,
       });
       const listData = await listModel.find({ userID: req.id });
       res.status(200).render("pages/listPage/listData", { listData });

@@ -229,7 +229,7 @@ h1 {
   font-size: 35px;
   text-align: center;
   text-transform: capitalize;
-  overflow: scroll;
+  overflow: auto;
 }
 .edit-intro {
   position: absolute;

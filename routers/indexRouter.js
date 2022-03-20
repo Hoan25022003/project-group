@@ -25,9 +25,13 @@ router.get("/List", checkNotLogin, async (req, res) => {
   }
 });
 
-router.get("/Home", (req, res) =>
-  res.sendFile(path.join(__dirname, "../views/home.html"))
-);
+router.get("/Home", checkNotLogin, async (req, res) => {
+  try {
+    res.render("home");
+  } catch (err) {
+    res.status(500).json({ message: "Error Server" });
+  }
+});
 
 router.get("/Login", checkLogin, (req, res) => {
   res.sendFile(path.join(__dirname, "../views/login.html"));
