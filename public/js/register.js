@@ -16,23 +16,27 @@ async function signUp() {
     ) {
       $(".result").text("Vui lòng nhập đầy đủ thông tin");
     } else {
-      if (password !== confirmPassword) {
-        $(".result").text("Mật khẩu phải được trùng khớp");
-      } else if (password.length < 6) {
-        $(".result").text("Mật khẩu phải có tối thiểu 6 kí tự");
+      if (username.length >= 4) {
+        if (password !== confirmPassword) {
+          $(".result").text("Mật khẩu phải được trùng khớp");
+        } else if (password.length < 6) {
+          $(".result").text("Mật khẩu phải có tối thiểu 6 kí tự");
+        } else {
+          await $.ajax({
+            url: "/user/creat",
+            type: "POST",
+            data: {
+              username: username,
+              sex: sex,
+              date: date,
+              address: address,
+              password: password,
+            },
+          });
+          window.location.href = "/Login";
+        }
       } else {
-        await $.ajax({
-          url: "/user/creat",
-          type: "POST",
-          data: {
-            username: username,
-            sex: sex,
-            date: date,
-            address: address,
-            password: password,
-          },
-        });
-        window.location.href = "/Login";
+        $(".result").text("Username phải có tối thiểu 4 kí tự");
       }
     }
   } catch (err) {
