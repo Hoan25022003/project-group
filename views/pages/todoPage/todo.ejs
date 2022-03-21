@@ -112,7 +112,9 @@
                 <td class="col-name"><%= item.name %></td>
                 <td class="col-date"><%= item.deadline %></td>
                 <td class="button-list">
-                  <button onclick="removeTodo()">remove</button>
+                  <button class="removebtn" id-task="<%= item._id %>">
+                    remove
+                  </button>
                   <button
                     type="button"
                     class="btn btn-primary updateclick"

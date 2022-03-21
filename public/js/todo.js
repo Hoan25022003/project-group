@@ -46,3 +46,20 @@ function updateTodo() {
       console.log(err);
     });
 }
+
+$(".removebtn").on("click", function () {
+  let a = $(this).attr("id-task");
+  $.ajax({
+      url : "/todo/"+ a,
+      type : "DELETE",
+      data : {
+        id : a
+      }
+  }).then(function (data) {
+    console.log(data);
+    window.location.reload();
+  })
+  .catch(function (err) {
+    console.log(err);
+  });
+});
