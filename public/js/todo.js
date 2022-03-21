@@ -17,3 +17,16 @@ async function add() {
     alert("hay dien du thong tin");
   }
 }
+
+function showid() {
+  let idcard = $(this).attr("id-task");
+  console.log(1212, idcard);
+}
+function updateTodo() {
+  const newname = $("#name-up").val();
+  const newstatus = $("#status-up").val();
+  const newdeadline = $("#deadline-up").val();
+  $.ajax({
+    url: "/todo/update/",
+  });
+}

@@ -8,6 +8,7 @@ async function addList() {
         listName: listName,
       },
     });
+    $("#listName").val("");
     $(".list").html(res);
   } catch (error) {
     console.log(error);

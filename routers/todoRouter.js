@@ -45,7 +45,7 @@ router.delete("/:id", (req, res) => {
     );
 });
 
-router.put("/put/:id", (req, res) => {
+router.put("/update/:id", (req, res) => {
   todoModel
     .updateOne(
       {

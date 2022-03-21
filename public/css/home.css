@@ -60,7 +60,7 @@ h1 {
   width: 100%;
   animation-name: changeColor;
   animation-iteration-count: infinite;
-  animation-duration: 6s;
+  animation-duration: 4s;
 }
 
 .header {
@@ -96,7 +96,7 @@ h1 {
 .btn-out:hover {
   animation-name: changeColor;
   animation-iteration-count: infinite;
-  animation-duration: 6s;
+  animation-duration: 4s;
   position: relative;
   transition: ease 0.5s;
 }
@@ -146,14 +146,14 @@ h1 {
 .about > div:hover {
   animation-name: changeColor;
   animation-iteration-count: infinite;
-  animation-duration: 6s;
+  animation-duration: 4s;
 }
 
 .content-header {
   text-align: center;
   animation-name: changeColor;
   animation-iteration-count: infinite;
-  animation-duration: 6s;
+  animation-duration: 4s;
   font-size: 40px;
   margin-top: 200px;
 }
@@ -164,7 +164,7 @@ h1 {
 
 .get-started {
   font-size: 25px;
-  padding: 5px;
+  padding: 20px;
   border-radius: 5px;
   cursor: pointer;
   background-color: var(--main-color);
@@ -173,4 +173,11 @@ h1 {
   border: none;
   margin-left: 50%;
   transform: translateX(-50%);
+}
+
+.get-started:hover {
+  background-color: rgba(255, 255, 255, 0.623);
+  animation-name: changeColor;
+  animation-iteration-count: infinite;
+  animation-duration: 2s;
 }
