@@ -230,6 +230,7 @@ h4 {
   animation-iteration-count: infinite;
   animation-duration: 2s;
 }
-.modal-content2 {
+.modal-content2,
+.modal-content3 {
   margin-top: 0 !important;
 }
