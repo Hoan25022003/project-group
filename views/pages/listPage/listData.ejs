@@ -1,13 +1,23 @@
 <% listData.map(function(value){ %>
-
 <div class="listjob">
-  <a class="list-detail" href="/list/<%= value._id %>"><%= value.listName %></a>
+  <a
+    class="list-detail"
+    style="background: <%= value.color %>"
+    href="/list/<%= value._id %>"
+    ><%= value.listName %></a
+  >
   <div class="btn-click">
-    <button class="btn-view update">update</button>
+    <button
+      class="btn-view update"
+      data-bs-toggle="modal"
+      data-bs-target="#updateStatic"
+      onclick="updateList('<%= value._id %>' ,'<%= value.listName %>', '<%= value.color %>')"
+    >
+      Update
+    </button>
     <button class="btn-view" onclick="deleteList('<%= value._id %>')">
-      remove
+      Remove
     </button>
   </div>
 </div>
-
 <% }) %>

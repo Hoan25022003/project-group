@@ -1,58 +1,8 @@
-* {
-  padding: 0;
-  margin: 0;
-  box-sizing: border-box;
-}
-:root {
-  --main-color: #0168e8;
-  --sub-color: #90429e;
-}
-@keyframes blink {
-  0% {
-    border-color: red;
-  }
-  50% {
-    border-color: green;
-  }
-  100% {
-    border-color: red;
-  }
-}
-@keyframes changeColor {
-  0% {
-    color: purple;
-  }
-  30% {
-    color: blue;
-  }
-  60% {
-    color: green;
-  }
-  100% {
-    color: purple;
-  }
-}
-
-body {
-  background-image: linear-gradient(
-    to bottom right,
-    purple,
-    rgb(192, 253, 255)
-  );
-  background-repeat: no-repeat;
-  background-attachment: fixed;
-  background-size: cover;
-  background-position: top;
-  height: 100%;
-  width: 100%;
-}
-
 h1 {
   text-align: center;
   padding: 50px;
   font-family: "Hurricane";
   font-size: 80px;
-  margin-bottom: 30px;
   animation-name: changeColor;
   animation-iteration-count: infinite;
   animation-duration: 4s;
@@ -104,8 +54,7 @@ h1 {
 }
 .input-content {
   display: flex;
-  align-items: center;
-  justify-content: space-between;
+  flex-direction: column;
   margin-bottom: 20px;
 }
 .input-content input {
@@ -136,9 +85,34 @@ h1 {
   flex-wrap: wrap;
   flex-direction: row;
   margin: 0 -10px;
-  max-height: 400px;
-  overflow: scroll;
+  height: 400px;
+  overflow: auto;
+  background-color: rgba(255, 255, 255, 0.3);
+  border-radius: 12px;
+  padding: 12px 20px;
 }
+
+/* width */
+.list::-webkit-scrollbar {
+  width: 6px;
+}
+
+/* Track */
+.list::-webkit-scrollbar-track {
+  border-radius: 3px;
+  background: #ccc;
+}
+
+/* Handle */
+.list::-webkit-scrollbar-thumb {
+  background: #888;
+}
+
+/* Handle on hover */
+.list::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+
 .list-detail {
   display: block;
   width: 150px;
@@ -153,6 +127,8 @@ h1 {
   color: #fff;
   background-color: var(--sub-color);
   position: relative;
+  font-size: 20px;
+  font-weight: 600;
 }
 
 .list-detail:hover {
@@ -166,6 +142,11 @@ h1 {
   width: 100%;
   bottom: -40px;
   left: 0;
+}
+
+.list-detail i {
+  font-size: 26px;
+  margin: 8px 0;
 }
 
 .btn-click {
@@ -196,4 +177,9 @@ h1 {
   animation-name: changeColor;
   animation-iteration-count: infinite;
   animation-duration: 2s;
+}
+
+.message {
+  color: red;
+  font-size: 16px;
 }

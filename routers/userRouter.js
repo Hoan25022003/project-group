@@ -66,14 +66,14 @@ router.get("/role", (req, res) => {
     });
 });
 
-router.get("/list", (req, res) => {
-  userModel
-    .find()
-    .skip((req.query.page - 1) * req.query.limit)
-    .limit(req.query.limit)
-    .then((data) => res.json(data))
-    .catch((err) => res.status(500).json(err));
-});
+// router.get("/list", (req, res) => {
+//   userModel
+//     .find()
+//     .skip((req.query.page - 1) * req.query.limit)
+//     .limit(req.query.limit)
+//     .then((data) => res.json(data))
+//     .catch((err) => res.status(500).json(err));
+// });
 
 router.post("/login", async (req, res) => {
   try {

@@ -1,8 +1,9 @@
-const mongoose = require("./connectDB");
+const mongoose = require("./connectDB.js");
 
 const listSchema = mongoose.Schema(
   {
     listName: String,
+    color: String,
     userID: {
       type: String,
       ref: "user",
