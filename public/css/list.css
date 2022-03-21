@@ -183,3 +183,47 @@ h1 {
   color: red;
   font-size: 16px;
 }
+
+.modal-content {
+  margin-top: 50% !important;
+  background-color: purple !important;
+  border-radius: 20px !important;
+  width: 500px !important;
+}
+.modal-header {
+  background-color: purple !important;
+  border-radius: 20px 20px 0 0 !important;
+}
+.modal-body input,
+.modal-body select {
+  border-radius: 5px;
+}
+.modal-title,
+h4 {
+  color: #fff;
+}
+.modal-footer {
+  display: flex;
+  justify-content: space-evenly;
+}
+.modal-content input:first-child {
+  padding: 5px;
+}
+.modal-footer button {
+  width: 100px;
+  padding: 5px;
+  border-radius: 5px;
+  cursor: pointer;
+  background-color: var(--main-color);
+  color: #fff;
+  outline: none;
+  border: none;
+  text-align: center;
+  font-size: 20px;
+}
+.modal-footer button:hover {
+  background-color: rgba(255, 255, 255, 0.623);
+  animation-name: changeColor;
+  animation-iteration-count: infinite;
+  animation-duration: 2s;
+}
