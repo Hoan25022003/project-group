@@ -46,3 +46,17 @@ body {
   height: 100%;
   width: 100%;
 }
+@keyframes bgcColor {
+  0% {
+    background-color: purple;
+  }
+  30% {
+    background-color: blue;
+  }
+  60% {
+    background-color: green;
+  }
+  100% {
+    background-color: purple;
+  }
+}

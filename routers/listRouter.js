@@ -8,6 +8,7 @@ router.get("/:id", async (req, res) => {
     const listTodo = await todoModel.find({
       listID: req.params.id,
     });
+    console.log(123123123, listTodo);
     res.render("pages/todoPage/todo", {
       listTodo,
       status: ["todo", "doing", "done"],

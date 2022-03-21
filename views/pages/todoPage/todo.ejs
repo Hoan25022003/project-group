@@ -112,8 +112,18 @@
                 <td class="col-name"><%= item.name %></td>
                 <td class="col-date"><%= item.deadline %></td>
                 <td class="button-list">
-                  <button onclick="removeTodo()">remove</button>
-                  <button onclick="updateTodo()">update</button>
+                  <button class="removebtn" id-task="<%= item._id %>">
+                    remove
+                  </button>
+                  <button
+                    type="button"
+                    class="btn btn-primary updateclick"
+                    data-bs-toggle="modal"
+                    data-bs-target="#staticBackdrop"
+                    id-task="<%= item._id %>"
+                  >
+                    update
+                  </button>
                 </td>
               </tr>
               <% } %> <%}) %>
@@ -134,11 +144,9 @@
       aria-hidden="true"
     >
       <div class="modal-dialog modal-dialog-centered">
-        <div class="modal-content">
+        <div class="modal-content modal-content2">
           <div class="modal-header">
-            <h5 class="modal-title" id="staticBackdropLabel">
-              <i class="fas fa-cog"></i> Modal Update
-            </h5>
+            <h5 class="modal-title" id="staticBackdropLabel">Update List</h5>
           </div>
           <div class="modal-body">
             <input type="text" name="" id="name-up" placeholder="name" /> <br />
@@ -160,8 +168,14 @@
             >
               Close
             </button>
-            <button type="button" class="btn btn-primary" id="update">
-              UPDATE
+            <button
+              onclick="updateTodo()"
+              type="button"
+              class="btn btn-primary"
+              data-bs-toggle="modal"
+              data-bs-target="#staticBackdrop"
+            >
+              update
             </button>
           </div>
           <p class="result-update"></p>

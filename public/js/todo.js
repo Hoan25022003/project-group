@@ -1,3 +1,4 @@
+var id = "";
 async function add() {
   let name = $("#name").val();
   let status = $("#status").val();
@@ -17,3 +18,49 @@ async function add() {
     alert("hay dien du thong tin");
   }
 }
+
+$(".updateclick").on("click", function () {
+  console.log(this);
+  id = $(this).attr("id-task");
+  console.log(12, id);
+});
+function updateTodo() {
+  const newname = $("#name-up").val();
+  const newstatus = $("#status-up").val();
+  const newdeadline = $("#deadline-up").val();
+  console.log(id);
+  $.ajax({
+    url: "/todo/update/" + id,
+    type: "PUT",
+    data: {
+      name: newname,
+      status: newstatus,
+      deadline: newdeadline,
+    },
+  })
+    .then(function (data) {
+      console.log(data);
+      window.location.reload();
+    })
+    .catch(function (err) {
+      console.log(err);
+    });
+}
+
+$(".removebtn").on("click", function () {
+  let a = $(this).attr("id-task");
+  $.ajax({
+    url: "/todo/" + a,
+    type: "DELETE",
+    data: {
+      id: a,
+    },
+  })
+    .then(function (data) {
+      console.log(data);
+      window.location.reload();
+    })
+    .catch(function (err) {
+      console.log(err);
+    });
+});
