@@ -191,3 +191,7 @@ h1 {
     left: -850px;
   }
 }
+
+.username {
+  text-transform: capitalize;
+}
