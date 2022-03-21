@@ -112,7 +112,9 @@ h1 {
 .list::-webkit-scrollbar-thumb:hover {
   background: #555;
 }
-
+.listjob {
+  max-height: 150px;
+}
 .list-detail {
   display: block;
   width: 150px;
