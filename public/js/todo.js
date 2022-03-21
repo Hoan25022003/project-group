@@ -20,15 +20,12 @@ async function add() {
 }
 
 $(".updateclick").on("click", function () {
-  console.log(this);
   id = $(this).attr("id-task");
-  console.log(12, id);
 });
 function updateTodo() {
   const newname = $("#name-up").val();
   const newstatus = $("#status-up").val();
   const newdeadline = $("#deadline-up").val();
-  console.log(id);
   $.ajax({
     url: "/todo/update/" + id,
     type: "PUT",
