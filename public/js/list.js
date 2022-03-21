@@ -41,15 +41,19 @@ function updateList(id, listName, color) {
     const newListName = $("#editListName").val();
     const newColor = $("#editColor").val();
     try {
-      await $.ajax({
-        type: "PUT",
-        url: `/list/${id}/update`,
-        data: {
-          newListName: newListName,
-          newColor: newColor,
-        },
-      });
-      window.location.reload();
+      if (newListName !== "") {
+        await $.ajax({
+          type: "PUT",
+          url: `/list/${id}/update`,
+          data: {
+            newListName: newListName,
+            newColor: newColor,
+          },
+        });
+        window.location.reload();
+      } else {
+        $(".message").text("Không được bỏ trống tên List");
+      }
     } catch (error) {
       $(".message").text(error.responseJSON.message);
     }
