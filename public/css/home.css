@@ -146,3 +146,16 @@ h1 {
 .get-started i {
   margin-left: 4px;
 }
+
+.img {
+  position: absolute;
+  right: -150px;
+  margin-top: -40px;
+  /* top: 0; */
+  border-radius: 50%;
+  overflow: hidden;
+  display: none;
+}
+.about div:hover .img {
+  display: block;
+}
