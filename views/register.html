@@ -27,11 +27,6 @@
     </div>
     <div class="content">
       <input type="text" placeholder="Username" id="username" />
-      <select name="" id="sex">
-        <option value="Male">Male</option>
-        <option value="Female">Female</option>
-      </select>
-      <input type="date" id="date" />
       <input type="text" id="address" placeholder="Address" />
       <input type="password" id="password" placeholder="Password" />
       <input
@@ -39,6 +34,13 @@
         id="confirm-password"
         placeholder="Confirm Password"
       />
+      <div class="user-sex">
+        <select name="" id="sex">
+          <option value="Male">Male</option>
+          <option value="Female">Female</option>
+        </select>
+        <input type="date" id="date" />
+      </div>
       <div class="btn">
         <p class="result"></p>
         <button onclick="signUp()">Register</button>
