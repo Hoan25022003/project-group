@@ -82,7 +82,8 @@
                 id="listName"
                 placeholder="list name"
               />
-              <h4>Select Color</h4>
+              <p class="message"></p>
+              <h4>Chọn màu nền</h4>
               <input type="color" name="" id="color" />
             </div>
           </div>
@@ -96,6 +97,54 @@
             </button>
             <button type="button" onclick="addList()" class="btn btn-primary">
               Add List
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div
+      class="modal fade"
+      id="updateStatic"
+      data-bs-backdrop="static"
+      data-bs-keyboard="false"
+      tabindex="-1"
+      aria-labelledby="staticBackdropLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="staticBackdropLabel">Modal Update</h5>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            ></button>
+          </div>
+          <div class="modal-body">
+            <div class="input-content">
+              <input
+                type="text"
+                name=""
+                id="editListName"
+                placeholder="list name"
+              />
+              <p class="message"></p>
+              <h4>Chọn màu nền</h4>
+              <input type="color" name="" id="editColor" />
+            </div>
+          </div>
+          <div class="modal-footer">
+            <button
+              type="button"
+              class="btn btn-secondary"
+              data-bs-dismiss="modal"
+            >
+              Close
+            </button>
+            <button type="button" class="btn btn-primary" id="editBtn">
+              Edit List
             </button>
           </div>
         </div>

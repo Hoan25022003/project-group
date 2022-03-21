@@ -3,7 +3,6 @@ h1 {
   padding: 50px;
   font-family: "Hurricane";
   font-size: 80px;
-  margin-bottom: 30px;
   animation-name: changeColor;
   animation-iteration-count: infinite;
   animation-duration: 4s;
@@ -86,8 +85,11 @@ h1 {
   flex-wrap: wrap;
   flex-direction: row;
   margin: 0 -10px;
-  max-height: 350px;
+  height: 400px;
   overflow: auto;
+  background-color: rgba(255, 255, 255, 0.3);
+  border-radius: 12px;
+  padding: 12px 20px;
 }
 
 /* width */
@@ -125,7 +127,7 @@ h1 {
   color: #fff;
   background-color: var(--sub-color);
   position: relative;
-  font-size: 18px;
+  font-size: 20px;
   font-weight: 600;
 }
 
@@ -144,7 +146,7 @@ h1 {
 
 .list-detail i {
   font-size: 26px;
-  margin: 10px 0;
+  margin: 8px 0;
 }
 
 .btn-click {
@@ -175,4 +177,9 @@ h1 {
   animation-name: changeColor;
   animation-iteration-count: infinite;
   animation-duration: 2s;
+}
+
+.message {
+  color: red;
+  font-size: 16px;
 }

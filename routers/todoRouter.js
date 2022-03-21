@@ -18,7 +18,7 @@ router.post("/", checkNotLogin, async (req, res) => {
       listID: arr[length - 1],
       name: req.body.name,
       status: req.body.status,
-      deadline: new Date(req.body.deadline),
+      deadline: req.body.deadline,
     });
     res.status(200).json({ message: "Successfull" });
   } catch (error) {
