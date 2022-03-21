@@ -85,6 +85,7 @@ h1 {
   left: -50px;
   box-shadow: 5px 5px 10px #000;
   top: 50px;
+  z-index: 1;
 }
 .about::after {
   content: "";
@@ -160,4 +161,33 @@ h1 {
 }
 .about div:hover .img {
   display: block;
+}
+
+.content-header p {
+  margin-bottom: 30px;
+}
+.boxrun {
+  margin: auto;
+  max-width: 500px;
+  overflow: hidden;
+}
+.runbox {
+  width: 1000px;
+  position: relative;
+  margin: auto;
+  /* overflow: hidden; */
+}
+.runbox div {
+  position: relative;
+  animation: move 5s ease-in infinite;
+  color: #fff;
+}
+
+@keyframes move {
+  0% {
+    left: 350px;
+  }
+  100% {
+    left: -850px;
+  }
 }
