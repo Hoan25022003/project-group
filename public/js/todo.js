@@ -31,7 +31,6 @@ function updateTodo() {
   const newname = $("#name-up").val();
   const newstatus = $("#status-up").val();
   const newdeadline = $("#deadline-up").val();
-  console.log(id);
   $.ajax({
     url: "/todo/update/" + id,
     type: "PUT",
