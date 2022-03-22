@@ -19,8 +19,13 @@ async function add() {
   }
 }
 
-$(".updateclick").on("click", function () {
+$(".updateclick").on("click", function (event) {
+  let updateName = $(this).parent().siblings().eq(0).html();
+  let updateDate = $(this).parent().siblings().eq(1).html();
   id = $(this).attr("id-task");
+  $("#name-up").val(updateName);
+  $("#deadline-up").val(updateDate);
+  console.log(updateDate);
 });
 function updateTodo() {
   const newname = $("#name-up").val();
