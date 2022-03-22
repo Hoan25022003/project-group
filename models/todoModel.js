@@ -3,7 +3,7 @@ const mongoose = require("./connectDB.js");
 const todoSchema = mongoose.Schema(
   {
     name: String,
-    deadline: Date,
+    deadline: String,
     status: String,
     userID: {
       type: String,

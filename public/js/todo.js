@@ -19,10 +19,13 @@ async function add() {
   }
 }
 
-$(".updateclick").on("click", function () {
-  console.log(this);
+$(".updateclick").on("click", function (event) {
+  let updateName = $(this).parent().siblings().eq(0).html();
+  let updateDate = $(this).parent().siblings().eq(1).html();
   id = $(this).attr("id-task");
-  console.log(12, id);
+  $("#name-up").val(updateName);
+  $("#deadline-up").val(updateDate);
+  console.log(updateDate);
 });
 function updateTodo() {
   const newname = $("#name-up").val();
@@ -50,16 +53,17 @@ function updateTodo() {
 $(".removebtn").on("click", function () {
   let a = $(this).attr("id-task");
   $.ajax({
-      url : "/todo/"+ a,
-      type : "DELETE",
-      data : {
-        id : a
-      }
-  }).then(function (data) {
-    console.log(data);
-    window.location.reload();
+    url: "/todo/" + a,
+    type: "DELETE",
+    data: {
+      id: a,
+    },
   })
-  .catch(function (err) {
-    console.log(err);
-  });
+    .then(function (data) {
+      console.log(data);
+      window.location.reload();
+    })
+    .catch(function (err) {
+      console.log(err);
+    });
 });
