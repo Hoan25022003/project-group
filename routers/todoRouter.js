@@ -54,7 +54,7 @@ router.put("/update/:id", (req, res) => {
       {
         name: req.body.name,
         status: req.body.status,
-        deadline: new Date(req.body.deadline),
+        deadline: req.body.deadline,
       }
     )
     .then((data) =>

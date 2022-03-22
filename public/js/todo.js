@@ -5,7 +5,7 @@ async function add() {
   let deadline = $("#deadline").val();
   if (name && status && deadline) {
     try {
-      const res = await $.ajax({
+      await $.ajax({
         url: "/todo",
         type: "POST",
         data: { name, status, deadline },
@@ -19,13 +19,12 @@ async function add() {
   }
 }
 
-$(".updateclick").on("click", function (event) {
+$(".updateclick").on("click", function () {
   let updateName = $(this).parent().siblings().eq(0).html();
   let updateDate = $(this).parent().siblings().eq(1).html();
   id = $(this).attr("id-task");
   $("#name-up").val(updateName);
   $("#deadline-up").val(updateDate);
-  console.log(updateDate);
 });
 function updateTodo() {
   const newname = $("#name-up").val();
