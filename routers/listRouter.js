@@ -8,7 +8,7 @@ router.get("/:id", async (req, res) => {
     const listTodo = await todoModel.find({
       listID: req.params.id,
     });
-    console.log(123123123, listTodo);
+    console.log(listTodo);
     res.render("pages/todoPage/todo", {
       listTodo,
       status: ["todo", "doing", "done"],
@@ -55,19 +55,26 @@ router.delete("/:id", checkNotLogin, async (req, res) => {
 
 router.put("/:id/update", checkNotLogin, async (req, res) => {
   try {
-    await listModel.updateOne(
-      { _id: req.params.id },
-      {
-        listName: req.body.newListName,
-        color: req.body.newColor,
-      }
-    );
-    const listData = await listModel.find({
-      userID: req.id,
+    const checkList = await listModel.findOne({
+      listName: req.body.newListName,
     });
-    res.status(200).render("pages/listPage/listData", { listData });
+    if (!checkList) {
+      await listModel.updateOne(
+        { _id: req.params.id },
+        {
+          listName: req.body.newListName,
+          color: req.body.newColor,
+        }
+      );
+      const listData = await listModel.find({
+        userID: req.id,
+      });
+      res.status(200).render("pages/listPage/listData", { listData });
+    } else {
+      res.status(400).json({ message: "List này đã tồn tại" });
+    }
   } catch (error) {
-    res.status(500).json({ mess: "loi server", error });
+    res.status(500).json({ message: "loi server", error });
   }
 });
 

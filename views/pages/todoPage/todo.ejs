@@ -28,7 +28,7 @@
     <link rel="stylesheet" href="/public/css/todo.css" />
   </head>
   <body>
-    <a href="/List"><h1>Back to List</h1></a>
+    <a href="/List"><h1><=Back to List</h1></a>
     <div class="home">
       <a href="/Home">
         <img
@@ -38,7 +38,7 @@
       </a>
     </div>
     <div class="header">
-      <h2>list title</h2>
+      <h2 class="list-tittle">list title</h2>
       <button
         type="button"
         class="btn-add"
@@ -144,11 +144,9 @@
       aria-hidden="true"
     >
       <div class="modal-dialog modal-dialog-centered">
-        <div class="modal-content">
+        <div class="modal-content modal-content2">
           <div class="modal-header">
-            <h5 class="modal-title" id="staticBackdropLabel">
-              <i class="fas fa-cog"></i> Modal Update
-            </h5>
+            <h5 class="modal-title" id="staticBackdropLabel">Update List</h5>
           </div>
           <div class="modal-body">
             <input type="text" name="" id="name-up" placeholder="name" /> <br />

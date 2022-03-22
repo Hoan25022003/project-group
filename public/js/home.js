@@ -10,3 +10,15 @@ $(".btn-out").on("click", async () => {
     console.log(error);
   }
 });
+$.ajax({
+  url: "/user/portfolio",
+  type: "GET",
+})
+  .then(function (data) {
+    let name = data.username;
+    $(".username").html(`${name}`);
+    console.log(19, data);
+  })
+  .catch(function (err) {
+    console.log(err);
+  });

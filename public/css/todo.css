@@ -1,6 +1,8 @@
 h1 {
   text-align: center;
-  padding: 50px;
+  padding: 50px 0 10px;
+  max-width: 500px;
+  margin: auto;
   font-family: "Hurricane";
   font-size: 80px;
   animation-name: changeColor;
@@ -15,6 +17,21 @@ a {
   position: absolute;
   top: 30px;
   left: 30px;
+}
+.home::after {
+  content: "Go Home page";
+  position: absolute;
+  width: 130px;
+  top: 60px;
+  left: 100px;
+  border: 3px solid #0168e8;
+  padding: 5px;
+  color: #fff;
+  border-radius: 0px 40px 40px 40px;
+  display: none;
+}
+.home:hover::after {
+  display: block;
 }
 .home img {
   border-radius: 5px;
@@ -75,6 +92,9 @@ a {
   background-color: purple !important;
   border-radius: 20px !important;
   width: 500px !important;
+}
+.modal-content2 {
+  margin-top: 0 !important;
 }
 .modal-header {
   background-color: purple !important;
