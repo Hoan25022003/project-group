@@ -16,7 +16,6 @@ $.ajax({
       age = today.getFullYear() - date.getFullYear() - 1;
     }
     const htmls = `
-        
         <p class="username">My name : ${data.username}</p>
         <p>Sex : ${data.sex}</p>
         <p>Date : ${data.date}</p>

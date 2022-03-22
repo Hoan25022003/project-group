@@ -17,7 +17,6 @@ $.ajax({
   .then(function (data) {
     let name = data.username;
     $(".username").html(`${name}`);
-    console.log(19, data);
   })
   .catch(function (err) {
     console.log(err);

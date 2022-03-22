@@ -36,7 +36,6 @@ function updateTodo() {
     },
   })
     .then(function (data) {
-      console.log(data);
       window.location.reload();
     })
     .catch(function (err) {
@@ -54,7 +53,6 @@ $(".removebtn").on("click", function () {
     },
   })
     .then(function (data) {
-      console.log(data);
       window.location.reload();
     })
     .catch(function (err) {
